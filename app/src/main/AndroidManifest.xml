@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android = "http://schemas.android.com/apk/res/android"
+          xmlns:tools = "http://schemas.android.com/tools"
+          tools:ignore = "InnerclassSeparator"
+          package = "com.amigo.applocker" >
+
+    <uses-permission android:name = "android.permission.GET_TASKS" />
+    <uses-permission android:name = "android.permission.REAL_GET_TASKS" />
+    <uses-permission android:name = "android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name = "android.permission.INTERNET" />
+    <uses-permission android:name = "android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name = "android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name = "android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+            android:allowBackup = "true"
+            android:icon = "@drawable/ic_launcher"
+            android:label = "@string/app_name"
+            android:supportsRtl = "true"
+            tools:node="replace"
+            tools:replace = "android:icon, android:theme"
+            android:theme = "@android:style/Theme.Light.NoTitleBar" >
+        <activity
+                android:excludeFromRecents = "true"
+                android:hardwareAccelerated = "false"
+                android:label = "@string/app_name"
+                android:launchMode = "singleInstance"
+                android:name = "com.noahmob.AppLocker.ApplicationListActivity"
+                android:screenOrientation = "portrait" >
+            <intent-filter >
+                <action android:name = "android.intent.action.MAIN" />
+                <category android:name = "android.intent.category.LAUNCHER" />
+            </intent-filter >
+        </activity >
+        <activity
+                android:label = "@string/app_name"
+                android:name = "com.noahmob.AppLocker.MainSplashActivity"
+                android:screenOrientation = "portrait" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:label = "@string/appLockerPreferenceActivityName"
+                android:name = "com.noahmob.AppLocker.Activity.AppLockerPreferenceActivity"
+                android:screenOrientation = "portrait" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:label = "@string/appLockerPreferenceActivityName"
+                android:name = "com.noahmob.AppLocker.Activity.SetPasswordActivity"
+                android:screenOrientation = "portrait" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:label = "@string/appLockerPreferenceActivityName"
+                android:name = "com.noahmob.AppLocker.Activity.SetMailActivity"
+                android:screenOrientation = "portrait" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:label = "@string/appLockerPreferenceActivityName"
+                android:name = "com.noahmob.AppLocker.Activity.RetrivePswActivity"
+                android:screenOrientation = "portrait" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:label = "@string/app_name"
+                android:name = "com.noahmob.AppLocker.Activity.InstallDetectedActivity"
+                android:screenOrientation = "portrait"
+                android:theme = "@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:label = "@string/app_name"
+                android:name = "com.noahapp.accesslib.activity.InstallRecommandActivity"
+                android:screenOrientation = "portrait"
+                android:theme = "@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:label = "@string/app_name"
+                android:name = "com.noahapp.accesslib.activity.InterstitalActivity"
+                android:screenOrientation = "portrait"
+                android:theme = "@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service android:name = "com.noahmob.AppLocker.Service.DetectorService" />
+
+        <activity
+                android:excludeFromRecents = "true"
+                android:launchMode = "singleInstance"
+                android:name = "com.noahmob.AppLocker.LockScreenActivity"
+                android:noHistory = "true"
+                android:screenOrientation = "portrait" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:launchMode = "singleInstance"
+                android:name = "com.noahmob.AppLocker.LockScreenPatternActivity"
+                android:noHistory = "true"
+                android:screenOrientation = "portrait" />
+        <activity
+                android:excludeFromRecents = "true"
+                android:name = "com.noahmob.AppLocker.LockPatternActivity"
+                android:screenOrientation = "portrait"
+                tools:node="replace"
+                android:theme = "@style/Alp_42447968.Theme.Light" />
+
+        <receiver android:name = "com.noahmob.AppLocker.Receiver.UninstallIntentReceiver" >
+            <intent-filter android:priority = "0" >
+                <action android:name = "android.intent.action.QUERY_PACKAGE_RESTART" />
+                <data android:scheme = "package" />
+            </intent-filter >
+        </receiver >
+        <receiver android:name = "com.noahmob.AppLocker.Receiver.StartupServiceReceiver" >
+            <intent-filter >
+                <action android:name = "android.intent.action.BOOT_COMPLETED" />
+                <action android:name = "android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name = "android.intent.action.USER_PRESENT" />
+            </intent-filter >
+        </receiver >
+        <receiver android:name = "com.noahmob.AppLocker.Receiver.InstallAppChangeReceiver" >
+            <intent-filter >
+                <action android:name = "android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme = "package" />
+            </intent-filter >
+            <intent-filter >
+                <action android:name = "android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme = "package" />
+            </intent-filter >
+        </receiver >
+        <receiver
+                android:exported = "true"
+                android:name = "com.noahmob.AppLocker.Receiver.ReferrerReceiver" >
+            <intent-filter >
+                <action android:name = "com.android.vending.INSTALL_REFERRER" />
+            </intent-filter >
+        </receiver >
+
+        <service
+                android:label = "@string/app_name"
+                android:name = "com.noahmob.AppLocker.Service.MyAccessibilityService"
+                android:permission = "android.permission.BIND_ACCESSIBILITY_SERVICE" >
+            <intent-filter >
+                <action android:name = "android.accessibilityservice.AccessibilityService" />
+            </intent-filter >
+            <meta-data
+                    android:name = "android.accessibilityservice"
+                    android:resource = "@xml/phone_accessibility" />
+        </service >
+        <service
+                android:exported = "false"
+                android:name = "com.noahmob.AppLocker.upgrade.NetworkService"/>
+
+        <!--<activity-->
+                <!--android:configChanges = "keyboard|keyboardHidden|orientation|screenLayout|screenSize"-->
+                <!--android:label = "@string/app_name"-->
+                <!--android:name = "com.facebook.FacebookActivity"-->
+                <!--android:theme = "@android:style/Theme.Translucent.NoTitleBar" />-->
+        <!--<meta-data-->
+                <!--android:name = "com.facebook.sdk.ApplicationId"-->
+                <!--android:value = "@string/facebook_app_id" />-->
+
+        <!--<activity-->
+                <!--android:configChanges = "keyboardHidden|orientation"-->
+                <!--android:excludeFromRecents = "true"-->
+                <!--android:name = "com.facebook.ads.InterstitialAdActivity" />-->
+        <!--<activity-->
+                <!--android:excludeFromRecents = "true"-->
+                <!--android:label = "@string/app_name"-->
+                <!--android:name = "com.noahapp.accesslib.activity.InstallRecommandActivity"-->
+                <!--android:screenOrientation = "portrait"-->
+                <!--android:theme = "@android:style/Theme.Translucent.NoTitleBar" />-->
+        <!--<activity-->
+                <!--android:excludeFromRecents = "true"-->
+                <!--android:label = "@string/app_name"-->
+                <!--android:name = "com.noahapp.accesslib.activity.InterstitalActivity"-->
+                <!--android:screenOrientation = "portrait"-->
+                <!--android:theme = "@android:style/Theme.Translucent.NoTitleBar" />-->
+        <!--<activity-->
+                <!--android:configChanges = "keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"-->
+                <!--android:name = "com.google.android.gms.ads.AdActivity"-->
+                <!--android:theme = "@android:style/Theme.Translucent" />-->
+        <!--<activity-->
+                <!--android:name = "com.google.android.gms.ads.purchase.InAppPurchaseActivity"-->
+                <!--android:theme = "@style/Theme.IAPTheme" />-->
+
+        <!--<meta-data-->
+                <!--android:name = "com.google.android.gms.version"-->
+                <!--android:value = "@integer/google_play_services_version" />-->
+    </application >
+</manifest >
+

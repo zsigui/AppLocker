@@ -1,0 +1,42 @@
+/*
+ * Copyright (c) 2016 Hai Bison
+ *
+ * See the file LICENSE at the root directory of this project for copying permission.
+ */
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '24.0.3'
+
+    defaultConfig {
+        minSdkVersion 4
+        targetSdkVersion 24
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+// ╔═══════════╗
+// ║   MAVEN   ║
+// ╚═══════════╝
+
+apply plugin: 'maven'
+
+uploadArchives { repositories { mavenDeployer {
+    repository(url: new File('../../haibison.bitbucket.org/master/maven-repos/').getAbsoluteFile().toURI().toString())
+
+    pom.groupId    = 'haibison.android'
+    pom.artifactId = 'underdogs'
+    pom.version    = '3.3.0'
+}}}

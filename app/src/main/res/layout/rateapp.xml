@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip">
+        <TextView android:textSize="@dimen/two_zero" android:id="@id/rateapp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Rate App" />
+    </RelativeLayout>
+</RelativeLayout>

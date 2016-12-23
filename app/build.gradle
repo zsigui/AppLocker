@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+    defaultConfig {
+        applicationId rootProject.applicationId
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName rootProject.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        buildConfigField 'String', 'APPLICATION_ID', "\"${rootProject.applicationId}\""
+//        buildConfigField 'String', 'VERSION_NAME', "\"${rootProject.versionName}\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.android.support:support-annotations:24.2.1'
+    compile 'com.google.dagger:dagger:2.8'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'eu.chainfire:libsuperuser:1.0.0.201608240809'
+    compile 'com.parse.bolts:bolts-tasks:1.4.0'
+    compile 'com.parse.bolts:bolts-applinks:1.4.0'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'javax.mail:mail:1.5.0-b01'
+    compile 'com.google.android.exoplayer:exoplayer:r1.5.13'
+    compile project(':android-lockpattern')
+}

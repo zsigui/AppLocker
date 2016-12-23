@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation = "vertical"
+              android:background = "#fffbfaf8"
+              android:layout_width = "fill_parent"
+              android:layout_height = "fill_parent"
+              xmlns:android = "http://schemas.android.com/apk/res/android"
+              xmlns:binding = "http://www.gueei.com/android-binding/" >
+
+    <RelativeLayout
+            android:background = "#ff81cfab"
+            android:layout_width = "fill_parent"
+            android:layout_height = "wrap_content" >
+
+        <EditText
+                android:id = "@id/textSearch"
+                android:background = "@drawable/search_bg"
+                android:paddingLeft = "10.0dip"
+                android:paddingRight = "10.0dip"
+                android:layout_width = "fill_parent"
+                android:layout_height = "48.0dip"
+                android:layout_marginLeft = "10.0dip"
+                android:layout_marginRight = "70.0dip"
+                android:hint = "Search my apps"
+                android:singleLine = "true"
+                android:drawableRight = "@drawable/search"
+                android:layout_centerVertical = "true" />
+
+        <RelativeLayout
+                android:id = "@id/tabsetting"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_marginTop = "5.0dip"
+                android:layout_marginRight = "5.0dip"
+                android:layout_alignParentRight = "true" >
+
+            <ImageView
+                    android:id = "@id/settingimg"
+                    android:paddingTop = "5.0dip"
+                    android:layout_width = "56.0dip"
+                    android:layout_height = "wrap_content"
+                    android:src = "@drawable/setting"
+                    android:layout_centerHorizontal = "true" />
+
+            <TextView
+                    android:textColor = "@color/white"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:layout_marginRight = "10.0dip"
+                    android:layout_marginBottom = "10.0dip"
+                    android:text = "setting"
+                    android:layout_below = "@id/settingimg"
+                    android:layout_centerHorizontal = "true" />
+        </RelativeLayout >
+    </RelativeLayout >
+
+    <ListView
+            android:id = "@id/app_list"
+            android:background = "#fffbfaf8"
+            android:focusable = "false"
+            android:scrollbars = "none"
+            android:clickable = "false"
+            android:layout_width = "fill_parent"
+            android:layout_height = "fill_parent"
+            android:listSelector = "#00000000"
+            android:cacheColorHint = "#00000000"
+            android:layout_weight = "1.0" />
+
+    <LinearLayout
+            android:orientation = "horizontal"
+            android:background = "#ff595959"
+            android:layout_width = "fill_parent"
+            android:layout_height = "wrap_content"
+            android:weightSum = "3.0" >
+
+        <RelativeLayout
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1.0" >
+
+            <Button
+                    android:textColor = "@color/gray"
+                    android:id = "@id/default_text"
+                    android:background = "@drawable/text_view_background_selector"
+                    android:paddingLeft = "20.0dip"
+                    android:paddingTop = "10.0dip"
+                    android:paddingRight = "20.0dip"
+                    android:paddingBottom = "10.0dip"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:text = "default"
+                    android:drawableTop = "@drawable/defaultapp"
+                    android:drawablePadding = "5.0dip"
+                    android:layout_centerInParent = "true" />
+        </RelativeLayout >
+
+        <RelativeLayout
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1.0" >
+
+            <Button
+                    android:textColor = "@color/gray"
+                    android:id = "@id/block_all_text"
+                    android:background = "@drawable/text_view_background_selector"
+                    android:paddingLeft = "20.0dip"
+                    android:paddingTop = "10.0dip"
+                    android:paddingRight = "20.0dip"
+                    android:paddingBottom = "10.0dip"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:text = "lock all"
+                    android:drawableTop = "@drawable/blockall"
+                    android:drawablePadding = "5.0dip"
+                    android:layout_centerInParent = "true" />
+        </RelativeLayout >
+
+        <RelativeLayout
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1.0" >
+
+            <Button
+                    android:textColor = "@color/gray"
+                    android:id = "@id/allow_all_text"
+                    android:background = "@drawable/text_view_background_selector"
+                    android:paddingLeft = "10.0dip"
+                    android:paddingTop = "10.0dip"
+                    android:paddingRight = "10.0dip"
+                    android:paddingBottom = "10.0dip"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:text = "unlock all"
+                    android:drawableTop = "@drawable/allowall"
+                    android:drawablePadding = "5.0dip"
+                    android:layout_centerInParent = "true" />
+        </RelativeLayout >
+    </LinearLayout >
+</LinearLayout >

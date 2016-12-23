@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#ff2dd1e2" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <Button android:textColor="@android:color/white" android:id="@id/btn_back" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cancel" android:layout_centerVertical="true" android:onClick="backto" />
+        <TextView android:textSize="25.0sp" android:textColor="@android:color/white" android:id="@id/tv_payment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BluePay" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <Button android:textSize="15.0sp" android:id="@id/btn_complete" android:background="@drawable/refresh" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:onClick="complete" />
+    </RelativeLayout>
+    <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:layout_gravity="center" android:id="@id/tv_error" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <WebView android:id="@id/wb_content" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</LinearLayout>

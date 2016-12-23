@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fffbfaf8" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:binding="http://www.gueei.com/android-binding/">
+    <RelativeLayout android:background="#ff81cfab" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/back" android:background="@android:color/transparent" android:layout_width="56.0dip" android:layout_height="56.0dip" android:src="@drawable/arrows_back" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="14.0dip" android:layout_marginBottom="10.0dip" android:text="@string/email_title" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <EditText android:id="@id/emailInput" android:background="@drawable/search_bg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:hint="@string/email_hint" android:ems="20" android:inputType="textEmailAddress">
+        <requestFocus />
+    </EditText>
+    <TextView android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/email_warn" />
+    <TextView android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="*It's highly recommended to set the password retrieve email address." />
+    <TextView android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="*Any question, just email us noahappteam@gmail.com." />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:weightSum="2.0">
+        <Button android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/later" android:background="@drawable/btn_gray_bg" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginRight="5.0dip" android:text="@string/email_later" android:layout_weight="1.0" />
+        <Button android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/next" android:background="@drawable/btn_red_bg" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginLeft="5.0dip" android:text="@string/email_next" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>
