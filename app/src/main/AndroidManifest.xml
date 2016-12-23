@@ -89,12 +89,13 @@
                 android:name = "com.noahmob.AppLocker.LockScreenPatternActivity"
                 android:noHistory = "true"
                 android:screenOrientation = "portrait" />
+        <!-- android:theme="@style/Alp_42447968.ThemeResources.Light" 而不是 android:theme="@style/Alp_42447968.Theme.Light -->
         <activity
                 android:excludeFromRecents = "true"
                 android:name = "com.noahmob.AppLocker.LockPatternActivity"
                 android:screenOrientation = "portrait"
                 tools:node="replace"
-                android:theme = "@style/Alp_42447968.Theme.Light" />
+                android:theme = "@style/Alp_42447968.ThemeResources.Light" />
 
         <receiver android:name = "com.noahmob.AppLocker.Receiver.UninstallIntentReceiver" >
             <intent-filter android:priority = "0" >

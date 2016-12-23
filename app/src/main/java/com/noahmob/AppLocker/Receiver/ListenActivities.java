@@ -25,7 +25,7 @@ public class ListenActivities extends Thread {
             String activityName = ((RunningTaskInfo) this.am.getRunningTasks(10).get(0)).topActivity.getClassName();
             Log.d("topActivity", "CURRENT Activity ::" + activityName);
             if (activityName.equals("com.android.packageinstaller.UninstallerActivity")) {
-                this.context.startActivity(new Intent(this.context, LockScreenActivity.class).setFlags(268435456));
+                this.context.startActivity(new Intent(this.context, LockScreenActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 this.exit = true;
                 Toast.makeText(this.context, "Done with pre-uninstallation tasks... Exiting Now", Toast.LENGTH_SHORT).show();
             } else if (activityName.equals("com.android.settings.ManageApplications")) {

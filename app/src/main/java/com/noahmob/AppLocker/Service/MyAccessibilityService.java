@@ -8,7 +8,6 @@ import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
-import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 
 import com.noahapp.accesslib.BaseAccessibilityService;
@@ -82,7 +81,6 @@ public class MyAccessibilityService extends BaseAccessibilityService {
 
     // tag:need to attention
     private void handleLockEvent(String paramString) {
-        Log.d("test-test", "handleLockEvent = " + paramString + ", not lock = " + paramString.equals(getPackageName()));
         if (paramString.equals(this.lastRunningPackage))
             return;
         if (paramString.equals(getPackageName()))

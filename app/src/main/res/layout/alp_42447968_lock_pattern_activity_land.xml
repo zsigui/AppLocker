@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width = "fill_parent"
+                android:layout_height = "fill_parent"
+                xmlns:android = "http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+            android:orientation = "horizontal"
+            android:layout_width = "fill_parent"
+            android:layout_height = "fill_parent"
+            android:baselineAligned = "false" >
+
+        <RelativeLayout
+                android:layout_width = "0.0dip"
+                android:layout_height = "fill_parent"
+                android:layout_weight = "0.3" >
+
+            <TextView
+                    android:textAppearance = "?android:textAppearanceMedium"
+                    android:gravity = "center|top"
+                    android:id = "@id/alp_42447968_textview_info"
+                    android:padding = "5.0dip"
+                    android:layout_width = "fill_parent"
+                    android:layout_height = "fill_parent"
+                    android:layout_above = "@id/alp_42447968_viewgroup_footer"
+                    android:textIsSelectable = "true" />
+
+            <LinearLayout
+                    android:orientation = "vertical"
+                    android:id = "@id/alp_42447968_viewgroup_footer"
+                    android:visibility = "gone"
+                    android:layout_width = "fill_parent"
+                    android:layout_height = "wrap_content"
+                    android:layout_alignParentBottom = "true"
+                    style = "?attr/alp_42447968_button_bar_style" >
+
+                <View
+                        android:layout_width = "fill_parent"
+                        android:layout_height = "@dimen/alp_42447968_separator_size" />
+
+                <Button
+                        android:enabled = "false"
+                        android:id = "@id/alp_42447968_button_confirm"
+                        android:layout_width = "fill_parent"
+                        android:layout_height = "wrap_content"
+                        android:text = "@string/alp_42447968_cmd_continue"
+                        style = "?attr/alp_42447968_button_bar_button_style" />
+
+                <Button
+                        android:id = "@id/alp_42447968_button_cancel"
+                        android:visibility = "gone"
+                        android:layout_width = "fill_parent"
+                        android:layout_height = "wrap_content"
+                        android:text = "@android:string/cancel"
+                        style = "?attr/alp_42447968_button_bar_button_style" />
+            </LinearLayout >
+        </RelativeLayout >
+
+        <RelativeLayout
+                android:layout_width = "0.0dip"
+                android:layout_height = "fill_parent"
+                android:layout_weight = "0.7" >
+
+            <haibison.android.lockpattern.widget.LockPatternView
+                    android:id = "@id/alp_42447968_view_lock_pattern"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:layout_centerInParent = "true" />
+        </RelativeLayout >
+    </LinearLayout >
+
+    <include layout = "@layout/alp_42447968_view_group_progress_bar" />
+</RelativeLayout >

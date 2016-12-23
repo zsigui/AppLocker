@@ -9,16 +9,22 @@ public class DP {
     public static final String TAG = "mmmm";
 
     public class Debug {
-        public static final boolean DEBUG_MODE = false;
+        public static final boolean DEBUG_MODE = true;
     }
 
     private DP() {
     }
 
     public static <T> void pl(T t) {
+        if (Debug.DEBUG_MODE) {
+            System.out.println(t == null ? "" : t.toString());
+        }
     }
 
     public static <T> void p(T t) {
+        if (Debug.DEBUG_MODE) {
+            System.out.print(t == null ? "" : t.toString());
+        }
     }
 
     public static <T> void I(T logInfo) {
@@ -26,44 +32,59 @@ public class DP {
     }
 
     public static <T> void I(String tag, T t) {
+        if (Debug.DEBUG_MODE) {
+            Log.i(tag, t == null ? "" : t.toString());
+        }
     }
 
     public static <T> void E(T logInfo) {
-        E("mmmm", logInfo.toString());
+        E(TAG, logInfo.toString());
     }
 
     public static <T> void E(String tag, T t) {
+        if (Debug.DEBUG_MODE) {
+            Log.e(tag, t == null ? "" : t.toString());
+        }
     }
 
     public static <T> void W(T logInfo) {
-        W("mmmm", logInfo.toString());
+        W(TAG, logInfo.toString());
     }
 
     public static <T> void W(String tag, T t) {
+        if (Debug.DEBUG_MODE) {
+            Log.w(tag, t == null ? "" : t.toString());
+        }
     }
 
     public static <T> void D(T logInfo) {
-        D("mmmm", logInfo.toString());
+        D(TAG, logInfo.toString());
     }
 
     public static <T> void D(String tag, T t) {
+        if (Debug.DEBUG_MODE) {
+            Log.d(tag, t == null ? "" : t.toString());
+        }
     }
 
     public static <T> void V(T logInfo) {
-        V("mmmm", logInfo.toString());
+        V(TAG, logInfo.toString());
     }
 
     public static <T> void V(String tag, T logInfo) {
-        if (logInfo != null) {
-            Log.v(tag, logInfo.toString());
+        if (Debug.DEBUG_MODE) {
+            Log.v(tag, logInfo == null ? "" : logInfo.toString());
         }
     }
 
     public static <T> void printLogWtf(T logInfo) {
-        Wtf("mmmm", logInfo.toString());
+        Wtf(TAG, logInfo.toString());
     }
 
     public static void Wtf(String tag, String logInfo) {
+        if (Debug.DEBUG_MODE) {
+            Log.wtf(tag, logInfo);
+        }
     }
 
     public static <T> void toast(Context context, T toastInfo) {

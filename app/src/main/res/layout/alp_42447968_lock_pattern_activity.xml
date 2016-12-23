@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background = "#ff46d8a7"
+                android:layout_width = "fill_parent"
+                android:layout_height = "fill_parent"
+                xmlns:android = "http://schemas.android.com/apk/res/android"
+                xmlns:ads = "http://schemas.android.com/apk/res-auto" >
+
+    <RelativeLayout
+            android:orientation = "horizontal"
+            android:id = "@id/img_applogo_parent"
+            android:background = "#ff46d8a7"
+            android:layout_width = "fill_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginLeft = "@dimen/four_zero"
+            android:layout_marginTop = "@dimen/three_five"
+            android:layout_marginRight = "@dimen/four_zero"
+            android:minHeight = "100.0dip" >
+
+        <ImageView
+                android:layout_gravity = "center_vertical"
+                android:id = "@id/img_applogo"
+                android:background = "#ff46d8a7"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:src = "@drawable/logo"
+                android:scaleType = "fitXY"
+                android:layout_centerInParent = "true" />
+    </RelativeLayout >
+
+    <TextView
+            android:textAppearance = "?android:textAppearanceMedium"
+            android:textSize = "@dimen/one_seven"
+            android:textColor = "@color/white"
+            android:gravity = "center"
+            android:id = "@id/alp_42447968_textview_info"
+            android:layout_width = "wrap_content"
+            android:layout_height = "48.0dip"
+            android:layout_marginTop = "30.0dip"
+            android:layout_below = "@id/img_applogo_parent"
+            android:layout_centerHorizontal = "true"
+            android:textIsSelectable = "true" />
+
+    <RelativeLayout
+            android:layout_width = "fill_parent"
+            android:layout_height = "fill_parent"
+            android:layout_margin = "0.0dip"
+            android:layout_above = "@id/alp_42447968_viewgroup_footer"
+            android:layout_below = "@id/alp_42447968_textview_info" >
+
+        <haibison.android.lockpattern.widget.LockPatternView
+                android:id = "@id/alp_42447968_view_lock_pattern"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_centerInParent = "true" />
+    </RelativeLayout >
+
+    <LinearLayout
+            android:orientation = "vertical"
+            android:id = "@id/alp_42447968_viewgroup_footer"
+            android:visibility = "visible"
+            android:layout_width = "fill_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginBottom = "20.0dip"
+            android:layout_alignParentBottom = "true"
+            style = "?attr/alp_42447968_button_bar_style" >
+
+        <View
+                android:layout_width = "fill_parent"
+                android:layout_height = "@dimen/alp_42447968_separator_size" />
+
+        <LinearLayout
+                android:orientation = "horizontal"
+                android:layout_width = "fill_parent"
+                android:layout_height = "wrap_content"
+                style = "?attr/alp_42447968_button_bar_style" >
+
+            <Button
+                    android:textSize = "@dimen/one_five"
+                    android:textColor = "#ffffffff"
+                    android:id = "@id/alp_42447968_button_cancel"
+                    android:background = "@android:color/transparent"
+                    android:visibility = "gone"
+                    android:layout_width = "0.0dip"
+                    android:layout_height = "48.0dip"
+                    android:text = "@string/alp_42447968_cmd_cancle"
+                    android:layout_weight = "1.0"
+                    style = "?attr/alp_42447968_button_bar_button_style" />
+
+            <Button
+                    android:enabled = "false"
+                    android:textSize = "@dimen/one_zero"
+                    android:textColor = "#ffffffff"
+                    android:id = "@id/alp_42447968_button_confirm"
+                    android:background = "@android:color/transparent"
+                    android:layout_width = "0.0dip"
+                    android:layout_height = "48.0dip"
+                    android:text = "@string/alp_42447968_cmd_continue"
+                    android:layout_weight = "1.0"
+                    style = "?attr/alp_42447968_button_bar_button_style" />
+        </LinearLayout >
+    </LinearLayout >
+
+    <include layout = "@layout/alp_42447968_view_group_progress_bar" />
+</RelativeLayout >

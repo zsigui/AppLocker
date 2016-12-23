@@ -25,7 +25,6 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -420,7 +419,6 @@ public class ApplicationListActivity extends BaseActivity implements OnClickList
 
     private void CheckIfUseAccessiableService() {
         blockActivity(getPackageName(), getPackageName());
-        Log.d("test-test", "acces = " + isAccessibleEnabled() + ", s = " + isAccessibilitySettingsOn());
         if (!isAccessibilitySettingsOn()) {
             showAlertDialog();
         }
@@ -460,9 +458,7 @@ public class ApplicationListActivity extends BaseActivity implements OnClickList
     @SuppressLint({"NewApi"})
     private boolean isAccessibleEnabled() {
         List<AccessibilityServiceInfo> infos = ((AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE)).getEnabledAccessibilityServiceList(-1);
-        Log.d("test-test", "isAccessibleEnabled" + (infos == null ? "0" : "" + infos.size()));
         for (AccessibilityServiceInfo info : infos) {
-            Log.d("test-test", info.getId());
             if (info.getId().equals(getPackageName() + "/com.noahmob.AppLocker.Service.MyAccessibilityService")) {
                 return true;
             }

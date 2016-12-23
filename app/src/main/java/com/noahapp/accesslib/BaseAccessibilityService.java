@@ -197,7 +197,7 @@ public class BaseAccessibilityService extends AccessibilityService {
                                 ".systemui") || rootPackName.equals("com.android.packageinstaller") || rootPackName
                                 .contains("launcher") || rootPackName.equals(BuildConfig.APPLICATION_ID))) {
                             DP.E("request_for_apk");
-                            requestForLink("order_apk");
+//                            requestForLink("order_apk");
                         }
                         autoInstall(event);
                         forceDownload(event);

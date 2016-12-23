@@ -13,7 +13,6 @@ import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -240,7 +239,6 @@ public class LockScreenActivity extends Activity implements OnClickListener, Tex
     public void onnumclcick(int number) {
         this.Password += "" + number;
         this.password_field.setText(this.Password);
-        Log.d("test-test", "passwordlength = " + passwordlength() + ", pwd = " + AppLockerPreference.getInstance(this).getPassword());
         if (this.Password.length() == passwordlength()) {
             if (verifyPassword()) {
                 this.Passed = Boolean.valueOf(true);
